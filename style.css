@@ -49,6 +49,9 @@ form > input {
   margin-bottom: 1em;
 }
 
-button.btn {
-  margin-top: 1em;
+.order-info {
+  margin-bottom: 1em;
+}
+
+button {
 }

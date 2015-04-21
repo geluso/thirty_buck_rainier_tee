@@ -172,33 +172,39 @@
               <input type="radio" name="size" value="xs" /> XL
             </div>
 
-            <label>Name</label>
-            <input />
+            <div class="order-info">
+              <label>Name</label>
+              <input />
 
-            <label>Email</label>
-            <input />
+              <label>Email</label>
+              <input />
 
-            <label>Address</label>
-            <input />
+              <label>Address</label>
+              <input />
 
-            <label>City</label>
-            <input />
+              <label>City</label>
+              <input />
 
-            <label>State</label>
-            <input />
+              <label>State</label>
+              <input />
 
-            <label>Zip Code</label>
-            <input />
-
-            <div></div>
-
-            <div class="row">
-              <div class="col-xs-12">
-                <button type="submit" class="btn btn-default">
-                  Order Tee
-                </button>
-              </div>
+              <label>Zip Code</label>
+              <input />
             </div>
+
+            <div>
+              <form action="" method="POST">
+                <script
+                  src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                  data-key="pk_test_ZtzStQI7XT4p0JKhsF4Ir12I"
+                  data-amount="3000"
+                  data-name="Thirty Buck Rainier Tee"
+                  data-description="One Tee ($30.00)"
+                  data-image="/img/128x128.png">
+                </script>
+              </form>
+            </div>
+
           </form>
         </div>
       </div>
