@@ -17,6 +17,18 @@ $city = $_POST['city'];
 $state = $_POST['state'];
 $zip = $_POST['zip'];
 
+$subject = "Thirty Buck Rainier Tee Order Confirmation";
+$message = "This confirms the order of one $size $gender tee to be sent to the following address:\r\n" .
+  "\r\n" .
+  "$name\r\n" .
+  "$address\r\n" .
+  "$city, $state $zip\r\n" .
+  "\r\n" .
+  "Thank you.";
+$headers = 'From: orders@thirtybuckrainiertee.com' . "\r\n" .
+    'Reply-To: orders@thirtybuckraniertee.com' . "\r\n" .
+    'Content-type: text/plain; charset=iso-8859-1' . "\r\n" .
+    'X-Mailer: PHP/' . phpversion();
 
 if ($token) {
   // Create the charge on Stripe's servers - this will charge the user's card
@@ -27,6 +39,9 @@ if ($token) {
       "source" => $token,
       "description" => "Thirty Buck Rainier Tee")
     );
+
+    // Send the confirmation email
+    mail($email, $subject, $message, $headers);
   } catch(\Stripe\Error\Card $e) {
       // The card has been declined
   } catch(Stripe\Error\InvalidRequest $e) {
@@ -194,9 +209,6 @@ if ($token) {
 
 <pre>
 <?php
-echo "$name\n";
-echo "$address\n";
-echo "$city, $state $zip";
 ?>
 </pre>
           <p>
