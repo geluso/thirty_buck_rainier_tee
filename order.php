@@ -1,3 +1,41 @@
+<?php
+require_once('stripe-php-2.1.2/init.php');
+
+// Set your secret key: remember to change this to your live secret key in production
+// See your keys here https://dashboard.stripe.com/account/apikeys
+\Stripe\Stripe::setApiKey("sk_test_rJQw13EMX93Xx4ONXU9M82WB");
+
+// Get the credit card details submitted by the form
+$token = $_POST['stripeToken'];
+
+$gender = $_POST['gender'];
+$size = $_POST['size'];
+$name = $_POST['name'];
+$email = $_POST['email'];
+$address = $_POST['address'];
+$city = $_POST['city'];
+$state = $_POST['state'];
+$zip = $_POST['zip'];
+
+
+if ($token) {
+  // Create the charge on Stripe's servers - this will charge the user's card
+  try {
+    $charge = \Stripe\Charge::create(array(
+      "amount" => 3000, // amount in cents, again
+      "currency" => "usd",
+      "source" => $token,
+      "description" => "Thirty Buck Rainier Tee")
+    );
+  } catch(\Stripe\Error\Card $e) {
+      // The card has been declined
+  } catch(Stripe\Error\InvalidRequest $e) {
+      // Reused token.
+  }
+}
+
+?>
+
 <html ng-app="app">
   <head>
     <title></title>
@@ -151,8 +189,18 @@
 
         <div class="col-xs-12 col-md-6 order">
           <p>
-          Pay $30 to receive your own hand-stitched tee. No shipping. No taxes. Just tee. <br />
-          It's all stitched on basic Hanes tees. Just tell me what gender and size you prefer.
+          This confirms the order of one <?= $size ?> <?= $gender ?> tee to be sent to the following address:
+          </p>
+
+<pre>
+<?php
+echo "$name\n";
+echo "$address\n";
+echo "$city, $state $zip";
+?>
+</pre>
+          <p>
+          You'll receive an email confirming this order, and another email confirming when it is sent out.
           </p>
 
           <p>
@@ -160,54 +208,9 @@
           if you have any questions.
           </p>
 
-          <form action="/order.php" method="POST">
-            <div class="options gender">
-              <label>Gender:</label>
-              <select name="gender">
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-              </select>
-            </div>
-
-            <div class="options size">
-              <label>Size:</label>
-              <input type="radio" name="size" value="XS" /> XS
-              <input type="radio" name="size" value="S" /> S
-              <input type="radio" name="size" value="M" checked /> M
-              <input type="radio" name="size" value="L" /> L
-              <input type="radio" name="size" value="XL" /> XL
-            </div>
-
-            <div class="order-info">
-              <label>Name</label>
-              <input name="name" />
-
-              <label>Email</label>
-              <input name="email" />
-
-              <label>Address</label>
-              <input name="address" />
-
-              <label>City</label>
-              <input name="city" />
-
-              <label>State</label>
-              <input name="state" />
-
-              <label>Zip Code</label>
-              <input name="zip"/>
-            </div>
-
-            <script
-              src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-              data-key="pk_test_ZtzStQI7XT4p0JKhsF4Ir12I"
-              data-amount="3000"
-              data-name="Thirty Buck Rainier Tee"
-              data-description="One Tee ($30.00)"
-              data-image="/img/128x128.png">
-            </script>
-
-          </form>
+          <p>
+          Thank you!
+          </p>
         </div>
       </div>
     </div>
