@@ -8,25 +8,28 @@ require_once('stripe-php-2.1.2/init.php');
 // Get the credit card details submitted by the form
 $token = $_POST['stripeToken'];
 
-$gender = $_POST['gender'];
-$size = $_POST['size'];
-$name = $_POST['name'];
-$email = $_POST['email'];
-$address = $_POST['address'];
-$city = $_POST['city'];
-$state = $_POST['state'];
-$zip = $_POST['zip'];
+$gender = htmlspecialchars($_POST['gender']);
+$size = htmlspecialchars($_POST['size']);
+$name = htmlspecialchars($_POST['name']);
+$email = htmlspecialchars($_POST['email']);
+$address = htmlspecialchars($_POST['address']);
+$city = htmlspecialchars($_POST['city']);
+$state = htmlspecialchars($_POST['state']);
+$zip = htmlspecialchars($_POST['zip']);
+
+$fullAddress = "$name\r\n" .
+  "$address\r\n" .
+  "$city, $state $zip\r\n";
 
 $subject = "Thirty Buck Rainier Tee Order Confirmation";
 $message = "This confirms the order of one $size $gender tee to be sent to the following address:\r\n" .
   "\r\n" .
-  "$name\r\n" .
-  "$address\r\n" .
-  "$city, $state $zip\r\n" .
+  "$fullAddress" .
   "\r\n" .
   "Thank you.";
 $headers = 'From: orders@thirtybuckrainiertee.com' . "\r\n" .
     'Reply-To: orders@thirtybuckraniertee.com' . "\r\n" .
+    'Bcc: stevegeluso+thirtybuckrainiertee@gmail.com' . "\r\n" .
     'Content-type: text/plain; charset=iso-8859-1' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 
@@ -37,8 +40,19 @@ if ($token) {
       "amount" => 3000, // amount in cents, again
       "currency" => "usd",
       "source" => $token,
-      "description" => "Thirty Buck Rainier Tee")
-    );
+      "description" => "Thirty Buck Rainier Tee",
+      "receipt_email" => $email,
+      "metadata" => array(
+        "gender" => $gender,
+        "size" => $size,
+        "name" => $name,
+        "email" => $email,
+        "address" => $address,
+        "city" => $city,
+        "state" => $state,
+        "zip" => $zip
+      )
+    ));
 
     // Send the confirmation email
     mail($email, $subject, $message, $headers);
@@ -207,10 +221,8 @@ if ($token) {
           This confirms the order of one <?= $size ?> <?= $gender ?> tee to be sent to the following address:
           </p>
 
-<pre>
-<?php
-?>
-</pre>
+          <pre><?= $fullAddress ?></pre>
+
           <p>
           You'll receive an email confirming this order, and another email confirming when it is sent out.
           </p>
