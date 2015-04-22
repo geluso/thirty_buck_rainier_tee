@@ -184,7 +184,7 @@ if ($token) {
       <h1 class="center">Thirty Buck Rainier Tee</h1>
       <div class="row">
         <div class="col-xs-12 col-md-6 text-center tee">
-          <img src="img/tee_transparent.png">
+          <img src="img/logo_on_tee_big_smaller_logo.png">
         </div>
 
         <div class="col-xs-12 col-md-6 order">
