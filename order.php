@@ -68,147 +68,24 @@ if ($token) {
 
 <html ng-app="app">
   <head>
-    <title></title>
-    <link rel="icon" href="http://5tephen.com/img/cheeseplane.gif" type="image/gif"/>
+    <title>Thirty Buck Rainier Tee</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Thirty Buck Rainier Tee" />
+    <meta property="og:url" content="http://thirtybuckrainiertee.com" />
+    <meta property="og:image" content="http://thirtybuckrainiertee.com/img/preview.png" />
+    <meta property="og:description" content="Pay $30 to receive your own hand-stitched tee. No shipping. No taxes. Just tee. It's all stitched on basic Hanes tees. Just tell me what gender and size you prefer." />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" type="image/png" href="favicon-20.png" sizes="20x20">
-    <script src="js/jquery.js" type="text/javascript"></script>
-    <script src="js/angular.js" type="text/javascript"></script>
-    <script src="js/main.js" type="text/javascript"></script>
-    <script src="js/canvas.js" type="text/javascript"></script>
-    <script src="js/controller.js" type="text/javascript"></script>
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js" type="text/javascript"></script>
 
     <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   </head>
-  <body ng-controller="Controller">
-    <div class="stars top">
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-    </div>
+  <body>
+    <div class="stars top"></div>
 
     <div class="container">
       <h1 class="center">Thirty Buck Rainier Tee</h1>
@@ -240,131 +117,6 @@ if ($token) {
       </div>
     </div>
 
-
-    <div class="stars bottom">
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-      <i class="glyphicon glyphicon-star"></i>
-    </div>
+    <div class="stars bottom"></div>
   </body>
 </html>
